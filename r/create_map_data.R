@@ -16,7 +16,7 @@ library(geojsonsf)
 locations<-read.csv("data/locations.csv")
 
 #add id column
-#locations$id<-c(1:dim(locations)[[1]])
+locations$id<-c(1:dim(locations)[[1]])
 
 
 
@@ -28,7 +28,7 @@ has_latlong<-locations[which(!is.na(locations$lat)),]
 # a table of rows that need to be geocoded
 to_geocode<-locations[which(is.na(locations$lat)), 1:3]
 
-if (dim(to_geocode)[1]>0){
+if (dim(to_geocode)[1]>0){ #if there is more than 0 rows to geocode
   # geocode the new rows
   new_latlong<-to_geocode %>% 
     geocode(city=city,
