@@ -13,7 +13,7 @@ library(geojsonsf)
 
 
 # read the data
-locations<-read.csv("../data/locations.csv")
+locations<-read.csv("data/locations.csv")
 
 #add id column
 #locations$id<-c(1:dim(locations)[[1]])
