@@ -1,8 +1,31 @@
-# Open Science Activism Map
+# gitRmap / "Guitar Map"
 
-A semi-automated map of people's locations, forked from https://micheletobias.github.io/traveling-gis-chat-book/, using R and Leaflet. 
+A semi-automated map of people's locations, which you can add your own points to. 
 
-To update the map, edit this file [https://github.com/nickbearman/open-science-activism-map/edit/main/data/locations.csv](https://github.com/nickbearman/open-science-activism-map/edit/main/data/locations.csv) and submit a PR. The code needs to be pulled. Then some R has to run to create the map (Nick can do this, but it should be able to be automated). Then the map should update. 
+Go to https://github.com/nickbearman/gitRmap/
+Click Fork
+Give your map a name
+Click Create fork
+Setup GitHub Pages - Deploy from branch - main - docs/
+Go to Actions. I understand my workflows, enable them. 
+Edit the file data/locations.csv
+Make your changes
+Click Commit Changes
+Brown dot - means it is running. 
+Click Actions - see 2 entries - update locations and pages build and deployment
+Wait for them to complete. 
+Update locations should take ~1min.  
+build pages and depolyment should take <1 min
+Click build pages and depolyment
+See URL https://edwardbearman.github.io/gitRmap/
+Click to see map
+
+
+To update the map, edit this file [[https://github.com/nickbearman/open-science-activism-map/edit/main/data/locations.csv]([https://github.com/nickbearman/gitRmap/blob/main/data/locations.csv] and submit a PR. The code needs to be pulled. Then some R has to run to create the map (Nick can do this, but it should be able to be automated). Then the map should update. 
+
+
+, forked from https://micheletobias.github.io/traveling-gis-chat-book/, using R and Leaflet. 
+
 
 <!-- 
 
