@@ -1,6 +1,6 @@
-"city","state","country","lat","long","name","job","contact","contactlink","id"
-"Marburg","Hesse","Germany",50.8138054249334,8.77126858185194,"Lydia Riedl","eScience Manager with focus on Open Science","lydia.riedl@uni-marburg.de","mailto:lydia.riedl@uni-marburg.de",1
-"Zurich","Zurich","Switzerland",47.3767670601068,8.54334271074418,"Ryssa","Postdoc Researcher","ryssa.moffat@gess.ethz.ch","mailto:ryssa.moffat@gess.ethz.ch",2
-"Bristol","","UK",51.454514,-2.58791,"Ruth Davies","UKRN Open Research Programme Project Coordinator","Ruth.1.davies@kcl.ac.uk","mailto:Ruth.1.davies@kcl.ac.uk",3
-"London","London","UK",51.5836904308479,-0.104558860944694,"Ruby Sleigh","Architect, Tutor","rubysleigh@gmail.com","mailto:rubysleigh@gmail.com",4
-"Norwich","Norfolk","UK",50.5530124279425,-2.4294969829782,"Test","Test Job","nick@nickbearman.com","mailto:nick@nickbearman.com",6
+"city","state","country","lat","long","name","long"
+"Marburg","Hesse","Germany",50.8138054249334,8.77126858185194,"Lydia Riedl",8.77126858185194
+"Zurich","Zurich","Switzerland",47.3767670601068,8.54334271074418,"Ryssa",8.54334271074418
+"Bristol","","UK",51.454514,-2.58791,"Ruth Davies",-2.58791
+"London","London","UK",51.5836904308479,-0.104558860944694,"Ruby Sleigh",-0.104558860944694
+"Norwich","Norfolk","UK",50.5530124279425,-2.4294969829782,"Test",-2.4294969829782
