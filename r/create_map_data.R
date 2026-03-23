@@ -18,7 +18,7 @@ locations<-read.csv("data/locations.csv")
 # duplicate data
 all_data <- locations
 # add id to all_data
-all_data$id<-c(1:dim(all_data)[[1]])
+#all_data$id<-c(1:dim(all_data)[[1]])
 
 # only keep city, state, country, lat, long columns
 locations <- locations[,1:5]
@@ -49,13 +49,45 @@ if (dim(to_geocode)[1]>0){ #if there is more than 0 rows to geocode
   
 }else{to_plot<-has_latlong}
 
-#join extra columns back on
+#join extra columns back on if they exist
 
-to_plot <- cbind(to_plot,all_data[,6:dim(locations)[[1]]])
+if (dim(all_data)[2] == 5) { # then no popup data, so no need to join
+  
+} else { # then join columns for popup
+  to_plot <- cbind(to_plot,all_data[,6:dim(all_data)[2]])
+}
+
+
 
 
 # write the data back to the csv so don't need to geocode every line every time it updates
 write.csv(to_plot, file="data/locations.csv", row.names = FALSE)
+
+# Create HTML file
+
+# How many columns in locations.csv? If 5, then no popup data
+
+if (dim(all_data)[2] == 5) { # then no popup data
+  text = "no popup"
+} else {
+  text = "popup"
+}
+
+
+
+# if no columns
+
+
+
+# if columns
+
+# set text
+
+# write the text to the HTML file
+file_connection<-file("docs/new.html")
+writeLines(text=text, con=file_connection)
+close(file_connection)
+
 
 
 # Create GeoJSON & Javascript ---------------------------------------------
