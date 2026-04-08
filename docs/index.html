@@ -276,11 +276,16 @@ for (let coord in locationMap) {
                     .replace(/([A-Z])/g, ' $1')   // camelCase to words
                     .replace(/_/g, ' ')             // snake_case to words
                     .replace(/\b\w/g, c => c.toUpperCase()); // capitalise each word
-              if (key === 'contact' && hasValue(props.contactlink)) { //special case to include link for contact link
-                parts.push("<b>" + label + ": </b><a href=" + props.contactlink + " target=\"blank\">" + val + "</a>");
-              } else {
-                parts.push("<b>" + label + ": </b>" + val);
-              }
+                
+                if (key === 'contact' && hasValue(props.contactlink)) { //special case to include link for contact link
+                  parts.push("<b>" + label + ": </b><a href=" + props.contactlink + " target=\"blank\">" + val + "</a>");
+                } else if (key === 'image') { // special case for images, either stored in images folder or as URL
+                    let src = val.trim();
+                    src = val.startsWith('http') ? val : 'images/' + val;
+                    parts.push("<img src='" + src + "' style='width:100%;max-width:200px;margin-top:5px;'>");
+                } else {
+                  parts.push("<b>" + label + ": </b>" + val);
+                }
             }
         });
     
