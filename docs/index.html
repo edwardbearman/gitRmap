@@ -1,3 +1,6 @@
+<!-- HTML page for the gitRmap projet 
+This is the doucment that shows your map. It also has all the other content at https://nickbearman.com/gitRmap. Feel free to edit your copy as you wish! -->
+
 <!DOCTYPE html>
 <html>
 
@@ -50,6 +53,8 @@
 	
 
 <body>
+  
+<!-- First box on the page -->
 
 <div class="rounded_box">
 
@@ -72,6 +77,8 @@
 
 <br>
 
+<!-- The box where the Map goes -->
+
 <div class="rounded_box">
 
 <div id="mapid" style="width: 600px; height: 400px; margin-left: 20px; margin-top: 20px"></div>
@@ -81,6 +88,8 @@
 <br>
 
 <div class="rounded_box">
+
+<!-- Quick Start box -->
 
 <h2>Quick Start:</h2>
 
@@ -112,6 +121,8 @@
 
 <div class="rounded_box">
 
+<!-- FAQ box -->
+
 <h2>FAQ</h2>
 
 <p><b>How do I setup gitRmap?</b></p>
@@ -140,6 +151,8 @@
 
 <div class="rounded_box">
 
+<!-- History box -->
+
 <h2>History</h2>
 
 <p>This was inspired by Michele Tobias's Travelling GIS Chat Book map setup in 2023
@@ -162,18 +175,22 @@ and this was funded. Thanks to OSGeo:UK!</p>
 
 </div>
 
+<!-- Read the required javascrpit files created by create_map_data.R -->
+
 <script src="locations.js" type="text/javascript"></script>
 
 <script src="book_line.js" type="text/javascript"></script>
 
 <script src="book_coords.js" type="text/javascript"></script>
 
+<!-- Create the map. This is where you set the center [lat, long] and zoom level -->
+
 <script>
 
     //add an empty map called "bookmap" to the page in the mapid div
     var bookmap = L.map('mapid', {
-        center: [45, 1],
-        zoom: 2
+        center: [45, 1], // map center
+        zoom: 2 // map zoom level
         });
 
     //add the base map = Stamen Toner tile layer

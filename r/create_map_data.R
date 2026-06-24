@@ -1,4 +1,4 @@
-#GOAL: process the list of cities for the gitRmap to 
+# GOAL: process the list of cities for gitRmap to 
 #   1. get lat/long coords
 #   2. make a geojson file
 #   3. make the javascript file the webmap needs.
@@ -11,32 +11,24 @@ library(tidygeocoder)
 library(sf)
 library(geojsonsf)
 
-
 # read the data
 locations<-read.csv("data/locations.csv")
 
 # duplicate data
 all_data <- locations
-# add id to all_data
-#all_data$id<-c(1:dim(all_data)[[1]])
 
-# only keep city, state, country, lat, long columns
+# only keep city, state, country, lat, long columns, remove any extra columns
 locations <- locations[,1:5]
-
-#add id column
-#locations$id<-c(1:dim(locations)[[1]])
-
-
 
 #  Geocode ---------------------------------------------------------------
 
 # add row index before splitting
 locations$row_id <- seq_len(nrow(locations))
 
-# a table of rows that already have been geocoded
+# create a table of rows that already have been geocoded
 has_latlong<-locations[which(!is.na(locations$lat)),]
 
-# a table of rows that need to be geocoded
+# create a table of rows that need to be geocoded
 to_geocode<-locations[which(is.na(locations$lat)), c("city", "state", "country", "row_id")] # include row_id
 
 if (dim(to_geocode)[1]>0){ #if there is more than 0 rows to geocode
@@ -53,12 +45,12 @@ if (dim(to_geocode)[1]>0){ #if there is more than 0 rows to geocode
   # restore original order
   to_plot <- to_plot[order(to_plot$row_id), ]
   
-}else{to_plot<-has_latlong}
+}else{to_plot<-has_latlong} #else no rows to geocode, copy data over to to_plot
 
 # remove the row_id column before continuing
 to_plot$row_id <- NULL
 
-#join extra columns back on if they exist
+#join the extra columns back on from all_data if they exist
 
 if (dim(all_data)[2] == 5) { # then no popup data, so no need to join
   
@@ -67,19 +59,16 @@ if (dim(all_data)[2] == 5) { # then no popup data, so no need to join
   to_plot <- cbind(to_plot, extra_cols)
 }
 
-
-
-
 # write the data back to the csv so don't need to geocode every line every time it updates
 write.csv(to_plot, file="data/locations.csv", row.names = FALSE)
 
 
 # Create GeoJSON & Javascript ---------------------------------------------
 
-# turn the points into an SF object
+# turn the points into an sf object
 map_points<-st_as_sf(to_plot, coords=c("long", "lat"))
 
-# convert the SF object to GeoJSON
+# convert the sf object to GeoJSON
 geojson_map_points<-sf_geojson(map_points)
 
 # wrap the GeoJSON text in the javascript declaration Leaflet needs to read GeoJSON
