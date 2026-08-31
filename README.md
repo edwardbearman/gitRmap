@@ -1,6 +1,6 @@
 # gitRmap / "Guitar Map"
 
-A semi-automated map of locations, which you can add your own points to. Designed for those who are new to GIS, but know a little bit of Git. 
+A semi-automated map of locations, which you can add your own points to. Designed for those who are new to GIS, but know a little bit of Git. [Check out the demo](https://nickbearman.com/gitRmap/). 
 
 ## Quick Start:
 
@@ -15,8 +15,8 @@ A semi-automated map of locations, which you can add your own points to. Designe
   - Click Actions - see 2 entries - update locations and pages build and deployment
   - Wait for them to complete. 
   - Update locations should take ~1min.  
-  - Build pages and deployment should take <1 min
-- When complete, **go to https://(username).github.io/gitRmap/** to see your map
+  - Build pages and deployment should take <1 min.
+- When complete, **go to https://(username).github.io/gitRmap/** to see your map. [Check out the demo](https://nickbearman.com/gitRmap/).
 
 More detailed [tutorial](https://nickbearman.com/gitRmap-docs/) and [YouTube video](https://youtu.be/-N1I1okulN4) available. 
 
